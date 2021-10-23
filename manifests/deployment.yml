@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "pallok8s-5de3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "pallok8s-5de3"
+  template:
+    metadata:
+      labels:
+        app: "pallok8s-5de3"
+    spec:
+      containers:
+        - name: "pallok8s-5de3"
+          image: "palloregistry.azurecr.io/pallok8s"
+          ports:
+          - containerPort: 3000
