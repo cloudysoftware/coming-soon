@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8s-3771"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8s-3771"
+  template:
+    metadata:
+      labels:
+        app: "k8s-3771"
+    spec:
+      containers:
+        - name: "k8s-3771"
+          image: "palloregistry.azurecr.io/k8s"
+          ports:
+          - containerPort: 3000
